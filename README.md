@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+/**/
+📌 Estructura básica de la Landing Page (Next.js + Bootstrap)
 
-First, run the development server:
+Layout Global (_app.js o layout.tsx en App Router)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Navbar fijo (con logo/nombre + links de navegación).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Footer (con datos de contacto, links rápidos, copyright).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Secciones principales
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Hero Section (Bienvenida)
 
-## Learn More
+Imagen de Esmeralda o ilustración suave.
 
-To learn more about Next.js, take a look at the following resources:
+Título claro: "Soy Esmeralda, Psicóloga Clínica".
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Subtítulo inspirador: "Descubrí herramientas profundas para comprenderte y sanar".
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Botón CTA: "Conocé mi curso".
 
-## Deploy on Vercel
+Sobre mí
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Texto resumido de quién es (bio corta, no toda la info cruda).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Foto profesional y cálida.
+
+CTA secundario: "Leer más sobre mi historia".
+
+Curso/Taller Online
+
+Explicación clara del contenido.
+
+Listado de beneficios (bullet points).
+
+Imagen ilustrativa.
+
+CTA: "Acceder al taller".
+
+Libro “Líneas sinceras”
+
+Imagen de la portada.
+
+Breve descripción.
+
+Botón CTA: "Comprar ahora".
+
+Servicios (Sesiones 1 a 1 + Talleres presenciales)
+
+Cards con descripción corta de cada servicio.
+
+CTA: "Agendar sesión".
+
+Testimonios (Social Proof)
+
+Opiniones de pacientes/lectores (si los tiene).
+
+Fotos pequeñas (siempre que haya permiso).
+
+Formulario de contacto
+
+Nombre, email, mensaje.
+
+Botón CTA: "Enviar".
+
+También un CTA de WhatsApp directo.
+
+Footer
+
+Redes sociales.
+
+Email de contacto.
+
+Ubicación.
+
+Copyright.
+
+🎨 Diseño (UI/UX)
+
+Colores: Paleta en tonos pastel (ejemplo: lavanda, celeste claro, beige suave, verde agua). Esto transmite paz, calma y confianza → fundamental para un perfil de psicología.
+
+Tipografía: Google Fonts → opciones como Poppins, Quicksand o Nunito. Todas tienen bordes redondeados y son altamente legibles.
+
+Mobile First: Bootstrap ya trae grid responsivo. Diseñamos primero pensando en pantallas chicas (stack vertical) y luego adaptamos a desktop.
+
+CTAs claros: máximo 1 CTA principal por sección (ej: curso, libro, contacto). No sobrecargar.
+
+Espacios en blanco (white space): necesarios para transmitir calma y que el contenido respire.
+
+Imágenes humanas y naturales: aumentan confianza (foto de Esme en varias secciones).
+
+🔍 SEO (Google)
+
+Head bien optimizado
+
+<title> único y descriptivo. Ej: "Esmeralda Perisset | Psicóloga Clínica - Cursos y Terapias Online".
+
+<meta description> claro y atractivo (máx. 160 caracteres).
+
+Open Graph y meta tags para compartir en redes.
+
+Estructura Hn (Jerarquía de títulos)
+
+H1 → Hero principal.
+
+H2 → “Sobre mí”, “Curso”, “Libro”, “Servicios”, “Contacto”.
+
+H3 → subtemas (ej: beneficios del taller).
+
+Contenido legible
+
+Frases cortas, lenguaje claro (no copiar literal todo su texto).
+
+Uso de palabras clave: “psicóloga clínica en Argentina”, “taller de autoconocimiento online”, “curso de constelaciones familiares”.
+
+Performance (Core Web Vitals)
+
+Next.js optimiza imágenes automáticamente (next/image).
+
+Lazy load en imágenes que no son visibles de entrada.
+
+Bootstrap en versión optimizada.
+
+Accesibilidad (A11y)
+
+Texto alternativo (alt) en imágenes.
+
+Contraste adecuado entre texto y fondo.
+
+Botones accesibles con teclado.

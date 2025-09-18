@@ -1,0 +1,176 @@
+/* Contenedor del navbar (clase local para no chocar con .navbar de Bootstrap) */
+.navRoot {
+    background-color: var(--color-light);
+    padding: 0.8rem 0;
+    z-index: 1050;
+}
+
+/* Marca / Logo */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo {
+    display: block;
+    height: auto;
+    width: auto;
+    max-height: 60px;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        max-height: 45px;
+    }
+}
+
+/* ===== Links (usamos :global porque .nav-link es de Bootstrap) ===== */
+.navRoot :global(.nav-link) {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-dark) !important;
+    padding: 0.45rem 0.8rem;
+    position: relative;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+/* Hover: color + subrayado animado */
+.navRoot :global(.nav-link:hover) {
+    color: var(--color-primary) !important;
+}
+
+.navRoot :global(.nav-link)::after {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    right: 0.6rem;
+    bottom: 0.15rem;
+    height: 2px;
+    background-color: var(--color-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+
+.navRoot :global(.nav-link:hover)::after {
+    transform: scaleX(1);
+}
+
+/* Estado activo (si lo marcás manualmente) */
+.navRoot :global(.nav-link.active) {
+    color: var(--color-primary-dark) !important;
+    font-weight: 600;
+}
+
+/* ======================
+   NAVBAR GENERAL
+====================== */
+.navRoot {
+    background-color: var(--color-light);
+    padding: 0.8rem 0;
+    z-index: 1050;
+}
+
+/* Logo */
+.logo {
+    height: auto;
+    width: auto;
+    max-height: 60px;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        max-height: 45px;
+    }
+}
+
+/* ======================
+   HAMBURGUESA CUSTOM
+====================== */
+.toggler {
+    border: none;
+    padding: 0.25rem 0.5rem;
+}
+
+.toggler:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(142, 120, 223, 0.25);
+    /* lavanda suave */
+    border-radius: 8px;
+}
+
+.togglerIcon {
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(142,120,223,0.85)' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/* ======================
+   NAVBAR GENERAL
+====================== */
+.navRoot {
+    background-color: var(--color-light);
+    padding: 0.8rem 0;
+    z-index: 1050;
+}
+
+/* Logo */
+.logo {
+    height: auto;
+    width: auto;
+    max-height: 60px;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        max-height: 45px;
+    }
+}
+
+/* ======================
+   HAMBURGUESA CUSTOM
+====================== */
+.toggler {
+    border: none;
+    /* quita el cuadrado */
+    background: transparent;
+    padding: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.toggler:focus {
+    outline: none;
+    box-shadow: none;
+    /* quita glow cuadrado */
+}
+
+.bar {
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Estado "activo" cuando el menú se abre */
+.toggler[aria-expanded="true"] .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+}
+
+.toggler[aria-expanded="true"] .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.toggler[aria-expanded="true"] .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+}
