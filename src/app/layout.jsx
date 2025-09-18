@@ -18,43 +18,31 @@ const dancingScript = Dancing_Script({
 export const metadata = {
   title: "Esmeralda Perisset | Psicóloga Clínica",
   description:
-    "Soy Esmeralda, psicóloga clínica. Descubrí mis talleres de autoconocimiento y mi libro 'Líneas sinceras'.",
+    "Soy Esmeralda, psicóloga clínica. Descubrí mis talleres y mi libro 'Líneas sinceras'.",
 
-  // ✅ Íconos
   icons: {
-    icon: "/icon_32x32.png",
-    shortcut: "/icon_96x96.png",
-    apple: "/icon_192x192.png"
+    icon: [
+      { url: "/icon_light_32x32.png", media: "(prefers-color-scheme: light)" },
+      { url: "/icon_dark_32x32.png", media: "(prefers-color-scheme: dark)" }
+    ],
+    apple: [
+      { url: "/icon_light_180x180.png", media: "(prefers-color-scheme: light)" },
+      { url: "/icon_dark_180x180.png", media: "(prefers-color-scheme: dark)" }
+    ]
   },
 
-  // ✅ PWA Manifest
   manifest: "/manifest.json",
 
-  // ✅ Metadata para compartir en redes
   openGraph: {
     title: "Esmeralda Perisset | Psicóloga Clínica",
     description:
       "Talleres de autoconocimiento y el libro 'Líneas sinceras'.",
-    url: "psicoesmeperisset.com",
-    siteName: "Esmeralda Perisset",
-    images: [
-      {
-        url: "/icon_1024x1024.png",
-        width: 1024,
-        height: 1024,
-        alt: "Logo Esmeralda Perisset"
-      }
-    ],
-    locale: "es_ES",
-    type: "website"
+    images: ["/icon_light_1024x1024.png"]
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Esmeralda Perisset | Psicóloga Clínica",
-    description: "Talleres de autoconocimiento y el libro 'Líneas sinceras'.",
-    images: ["/icon_1024x1024.png"],
-    creator: "@tuusuario"
+    images: ["/icon_light_1024x1024.png"]
   }
 };
 
