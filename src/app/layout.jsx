@@ -22,12 +22,12 @@ export const metadata = {
 
   icons: {
     icon: [
-      { url: "/icon_light_32x32.png", media: "(prefers-color-scheme: light)" },
-      { url: "/icon_dark_32x32.png", media: "(prefers-color-scheme: dark)" }
+      { url: "/favicon-32x32.webp", media: "(prefers-color-scheme: light)" },
+      { url: "/favicon-32x32-dark.webp", media: "(prefers-color-scheme: dark)" }
     ],
     apple: [
-      { url: "/icon_light_180x180.png", media: "(prefers-color-scheme: light)" },
-      { url: "/icon_dark_180x180.png", media: "(prefers-color-scheme: dark)" }
+      { url: "/apple-touch-icon.webp", media: "(prefers-color-scheme: light)" },
+      { url: "/apple-touch-icon-dark.webp", media: "(prefers-color-scheme: dark)" }
     ]
   },
 
@@ -37,12 +37,12 @@ export const metadata = {
     title: "Esmeralda Perisset | Psicóloga Clínica",
     description:
       "Talleres de autoconocimiento y el libro 'Líneas sinceras'.",
-    images: ["/icon_light_1024x1024.png"]
+    images: ["/og-image.webp"]
   },
 
   twitter: {
     card: "summary_large_image",
-    images: ["/icon_light_1024x1024.png"]
+    images: ["/og-image.webp"]
   }
 };
 
