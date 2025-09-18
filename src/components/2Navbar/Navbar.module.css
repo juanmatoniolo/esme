@@ -174,3 +174,24 @@
 .toggler[aria-expanded="true"] .bar:nth-child(3) {
     transform: rotate(-45deg) translateY(-8px);
 }
+
+/* ======================
+ANIMACIÓN MENÚ DESPLEGABLE
+====================== */
+
+/* Oculto por defecto */
+.collapse:not(.show) {
+    display: block;
+    /* mantiene el elemento para animar */
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: height 0.35s ease, opacity 0.35s ease;
+}
+
+/* Cuando se abre */
+.collapse.show {
+    height: auto;
+    opacity: 1;
+    transition: height 0.35s ease, opacity 0.35s ease;
+}
