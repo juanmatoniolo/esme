@@ -1,0 +1,77 @@
+/* Banner base */
+.banner {
+    margin-top: 3em;
+    position: relative;
+    isolation: isolate;
+    /* asegura overlays correctos */
+    min-height: clamp(320px, 56vw, 540px);
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg);
+
+}
+
+/* Imagen de fondo */
+.img {
+    object-fit: cover;
+    object-position: center 40%;
+    filter: saturate(95%);
+    z-index: -2;
+}
+
+/* Lavado lavanda (usa la paleta nueva) */
+.banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--color-surface-alt);
+    /* #bcb8d9 */
+    mix-blend-mode: multiply;
+    /* tono lavanda sobre la foto */
+    opacity: 0.55;
+    z-index: -1;
+}
+
+/* Suave gradiente para legibilidad de texto */
+.banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+}
+
+/* Contenido */
+.inner {
+    padding: clamp(3rem, 6vw, 5rem) 1rem;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    min-height: inherit;
+}
+
+.title {
+    font-family: "Dancing Script", var(--font-heading);
+    font-weight: 700;
+    font-size: clamp(1.6rem, 4.2vw, 2.4rem);
+    line-height: 1.2;
+    color: var(--color-surface);
+    /* texto claro sobre lavado */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    margin: 0;
+    color: #bcb8d9;
+}
+
+.subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    line-height: 1.6;
+    color: color-mix(in oklab, var(--color-surface) 92%, var(--color-bg));
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.18);
+    margin-top: 0.75rem;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    .img {
+        filter: none;
+    }
+}
