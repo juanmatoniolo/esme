@@ -1,6 +1,6 @@
 /* Contenedor del navbar (clase local para no chocar con .navbar de Bootstrap) */
 .navRoot {
-    background-color: var(--color-light);
+    background-color: var(--color-surface-al);
     padding: 0.8rem 0;
     z-index: 1050;
 }
@@ -30,7 +30,7 @@
     font-family: var(--font-body);
     font-size: 1rem;
     font-weight: 500;
-    color: var(--color-dark) !important;
+    color: var(--color-text) !important;
     padding: 0.45rem 0.8rem;
     position: relative;
     transition: color 0.25s ease, transform 0.25s ease;
@@ -38,7 +38,7 @@
 
 /* Hover: color + subrayado animado */
 .navRoot :global(.nav-link:hover) {
-    color: var(--color-primary) !important;
+    color: var(--color-primary-hover) !important;
 }
 
 .navRoot :global(.nav-link)::after {
@@ -54,14 +54,13 @@
     transition: transform 0.25s ease;
 }
 
-
 .navRoot :global(.nav-link:hover)::after {
     transform: scaleX(1);
 }
 
 /* Estado activo (si lo marcás manualmente) */
 .navRoot :global(.nav-link.active) {
-    color: var(--color-primary-dark) !important;
+    color: var(--color-primary-hover) !important;
     font-weight: 600;
 }
 
@@ -69,7 +68,7 @@
    NAVBAR GENERAL
 ====================== */
 .navRoot {
-    background-color: var(--color-light);
+    background-color: var(--color-surface);
     padding: 0.8rem 0;
     z-index: 1050;
 }
@@ -97,8 +96,8 @@
 
 .toggler:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(142, 120, 223, 0.25);
-    /* lavanda suave */
+    box-shadow: 0 0 0 2px rgba(188, 184, 217, 0.25);
+    /* var(--color-primary) con alpha */
     border-radius: 8px;
 }
 
@@ -106,7 +105,8 @@
     display: inline-block;
     width: 1.6rem;
     height: 1.6rem;
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(142,120,223,0.85)' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(188,184,217,0.85)' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    /* tono basado en --color-primary */
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -116,7 +116,7 @@
    NAVBAR GENERAL
 ====================== */
 .navRoot {
-    background-color: var(--color-light);
+    background-color: var(--color-surface);
     padding: 0.8rem 0;
     z-index: 1050;
 }
@@ -151,7 +151,7 @@
 .toggler:focus {
     outline: none;
     box-shadow: none;
-    /* quita glow cuadrado */
+    /* quitamos glow por compatibilidad, lo maneja :focus-visible arriba */
 }
 
 .bar {
@@ -182,11 +182,15 @@ ANIMACIÓN MENÚ DESPLEGABLE
 /* Oculto por defecto */
 .collapse:not(.show) {
     display: block;
-    /* mantiene el elemento para animar */
+    /*mantieneelelementoparaanimar*/
     height: 0;
     overflow: hidden;
     opacity: 0;
     transition: height 0.35s ease, opacity 0.35s ease;
+    -webkit-transition: height 0.35s ease, opacity 0.35s ease;
+    -moz-transition: height 0.35s ease, opacity 0.35s ease;
+    -ms-transition: height 0.35s ease, opacity 0.35s ease;
+    -o-transition: height 0.35s ease, opacity 0.35s ease;
 }
 
 /* Cuando se abre */

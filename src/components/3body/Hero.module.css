@@ -1,73 +1,114 @@
+/* ======================
+   HERO
+====================== */
+
 .hero {
-    background-color: var(--color-muted);
-    padding: 7rem 1rem;
+    background:
+        radial-gradient(900px 460px at 80% -10%,
+            color-mix(in oklab, var(--color-primary-soft) 22%, transparent) 0%,
+            transparent 60%),
+        linear-gradient(180deg, var(--color-bg) 0%, #ffffff 100%);
+    padding: clamp(4rem, 8vw, 7rem) 1rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.hero :global(.container) {
+    max-width: 920px;
 }
 
 .title {
-    font-family: "Dancing Script", cursive;
-    font-size: 2.8rem;
+    font-family: "Dancing Script", var(--font-heading);
     font-weight: 600;
-    color: var(--color-primary-dark);
-
+    font-size: clamp(2rem, 4.2vw, 3.2rem);
+    line-height: 1.15;
+    letter-spacing: 0.2px;
+    color: var(--color-text);
+    margin: 0;
 }
 
 .subtitle {
-
-    font-size: 1.2rem;
-    color: var(--color-dark);
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    line-height: 1.6;
+    color: var(--color-text-muted);
     margin-top: 1rem;
     margin-bottom: 2rem;
 }
 
-.ctaPrimary {
+/* CTAs */
+.ctaPrimary,
+.ctaSecondary {
     display: inline-block;
-    background-color: var(--color-primary);
-    color: #ffffff !important;
     padding: 0.7rem 1.6rem;
-    border-radius: 50px;
+    border-radius: 999px;
     font-weight: 500;
     text-decoration: none;
-    margin-right: 0.8rem;
-    transition: background-color 0.3s ease;
+    transition: transform .15s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+    will-change: transform, box-shadow, background-color, color, border-color;
 }
 
-.ctaPrimary:hover {
-    background-color: var(--color-primary-dark);
+.ctaPrimary {
+    background: var(--color-primary);
+    color: #fff !important;
+    box-shadow: var(--shadow-sm);
+    margin-right: 0.8rem;
+}
+
+.ctaPrimary:hover,
+.ctaPrimary:focus-visible {
+    background: var(--color-primary-hover);
+    color: #fff !important;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.ctaPrimary:focus-visible {
+    outline: 2px solid color-mix(in oklab, var(--color-primary) 55%, white);
+    outline-offset: 2px;
 }
 
 .ctaSecondary {
-    display: inline-block;
-    border: 2px solid var(--color-accent);
-    color: var(--color-accent);
-    padding: 0.7rem 1.6rem;
-    border-radius: 50px;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    background: transparent;
 }
 
-.ctaSecondary:hover {
-    background-color: var(--color-accent);
-    color: #ffffff;
+.ctaSecondary:hover,
+.ctaSecondary:focus-visible {
+    background: var(--color-primary);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+    border-color: var(--color-primary);
 }
 
+.ctaSecondary:focus-visible {
+    outline: 2px solid color-mix(in oklab, var(--color-primary) 55%, white);
+    outline-offset: 2px;
+}
 
+/* Responsive */
 @media (max-width: 426px) {
     .title {
-        font-family: "Dancing Script", cursive;
-        font-size: 1.9rem;
-        font-weight: 600;
-        color: var(--color-primary-dark);
-
+        font-size: clamp(1.8rem, 8vw, 2.2rem);
     }
 
     .subtitle {
-
-        font-size: .8em;
-        color: var(--color-dark);
-        margin-top: 1rem;
-        margin-bottom: 2rem;
+        font-size: 0.95rem;
+        margin-top: 0.9rem;
+        margin-bottom: 1.6rem;
     }
 
+    .ctaPrimary {
+        margin-right: 0.6rem;
+    }
 }
 
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .ctaPrimary,
+    .ctaSecondary {
+        transition: none !important;
+    }
+}

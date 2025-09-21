@@ -1,12 +1,17 @@
 {
+	"id": "/",
 	"name": "Esmeralda Perisset | Psicóloga Clínica",
 	"short_name": "Esmeralda",
 	"description": "Psicóloga clínica. Talleres de autoconocimiento y el libro 'Líneas sinceras'.",
+	"lang": "es-AR",
+	"dir": "ltr",
 	"start_url": "/",
+	"scope": "/",
 	"display": "standalone",
 	"orientation": "portrait",
-	"background_color": "#F2E2E2",
-	"theme_color": "#8e78df",
+	"background_color": "#f7f3f2",
+	"theme_color": "#74719e",
+	"categories": ["health", "education", "lifestyle"],
 	"icons": [
 		{
 			"src": "/android-chrome-192x192.webp",
@@ -36,5 +41,23 @@
 			"purpose": "any",
 			"media": "(prefers-color-scheme: dark)"
 		}
-	]
+	],
+	"shortcuts": [
+		{
+			"name": "Taller",
+			"short_name": "Taller",
+			"url": "/#taller"
+		},
+		{
+			"name": "Libro",
+			"short_name": "Libro",
+			"url": "/#libro"
+		},
+		{
+			"name": "Contacto",
+			"short_name": "Contacto",
+			"url": "/#contacto"
+		}
+	],
+	"prefer_related_applications": false
 }

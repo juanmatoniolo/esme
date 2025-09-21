@@ -1,28 +1,75 @@
 :root {
-    /* Colores (ya definidos antes) */
-    --color-primary: #8e78df;
-    --color-primary-dark: #9c90d3;
-    --color-light: #dabbbb;
-    --color-bg: #F2E2E2;
-    --color-dark: #333333;
+    /* Base */
+    --color-bg: #f7f3f2;
+    /* fondo principal */
+    --color-surface: #ffffff;
+    /* tarjetas / nav */
+    --color-surface-alt: #bcb8d9;
+    /* secciones alternadas */
+
+    /* Brand */
+    --color-primary: #74719e;
+    /* botones / links */
+    --color-primary-hover: #5e5a86;
+    /* hover más profundo */
+    --color-primary-soft: #ebe9f6;
+    /* fondos suaves (chips) */
+
+    /* Texto & líneas */
+    --color-text: #3f3d56;
+    /* texto principal */
+    --color-text-muted: #6f6d86;
+    /* texto secundario */
+    --color-border: rgba(63, 61, 86, 0.12);
+    /* divisores sutiles */
+
+    /* Efectos */
+    --radius: 14px;
+    --shadow-sm: 0 1px 2px rgba(34, 22, 14, 0.06);
+    --shadow-md: 0 8px 24px rgba(34, 22, 14, 0.10);
+
     /* Tipografías */
-    --font-body: var(--font-nunito);
-    --font-title: var(--font-dancing);
+    --font-heading: "Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
 
+/* Reset suave + Bootstrap overrides mínimos */
 body {
-    font-family: var(--font-body), sans-serif;
-    background-color: var(--color-bg);
-    color: var(--color-dark);
-    line-height: 1.6;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: var(--font-title), cursive;
-    font-weight: 400;
+a,
+.nav-link {
+    color: var(--color-primary);
+}
+
+a:hover,
+.nav-link:hover {
+    color: var(--color-primary-hover);
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--color-primary);
+    --bs-btn-border-color: var(--color-primary);
+    --bs-btn-hover-bg: var(--color-primary-hover);
+    --bs-btn-hover-border-color: var(--color-primary-hover);
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #fff;
+    border-radius: 999px;
+    box-shadow: var(--shadow-sm);
+    transition: transform .15s ease, box-shadow .2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.badge-soft {
+    background: var(--color-primary-soft);
+    color: var(--color-text);
+    border-radius: 999px;
+    padding: .35rem .6rem;
 }
