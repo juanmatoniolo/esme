@@ -1,9 +1,9 @@
 :root {
     /* Base */
-    --color-bg: #f3f2ff;
+    --color-bg: #f3f3f3;
     --color-bg2: #f7f3f2;
     /* fondo principal */
-    --color-surface: #ffffff;
+    --color-surface: #f3f3f3;
     /* tarjetas / nav */
     --color-surface-alt: #bcb8d9;
     --color-surface-alt2: #f3f2ff;

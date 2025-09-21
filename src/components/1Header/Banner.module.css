@@ -7,7 +7,7 @@
     min-height: clamp(320px, 56vw, 540px);
     border-bottom: 1px solid var(--color-border);
     background: var(--color-bg);
-
+    /* #f3f2ff */
 }
 
 /* Imagen de fondo */
@@ -18,7 +18,7 @@
     z-index: -2;
 }
 
-/* Lavado lavanda (usa la paleta nueva) */
+/* Lavado lavanda con tu paleta */
 .banner::before {
     content: "";
     position: absolute;
@@ -26,12 +26,12 @@
     background: var(--color-surface-alt);
     /* #bcb8d9 */
     mix-blend-mode: multiply;
-    /* tono lavanda sobre la foto */
+    /* tiñe la foto con lavanda */
     opacity: 0.55;
     z-index: -1;
 }
 
-/* Suave gradiente para legibilidad de texto */
+/* Gradiente sutil para contraste del texto */
 .banner::after {
     content: "";
     position: absolute;
@@ -48,25 +48,33 @@
     min-height: inherit;
 }
 
+/* Tipos */
 .title {
     font-family: "Dancing Script", var(--font-heading);
     font-weight: 700;
-    font-size: clamp(1.6rem, 4.2vw, 2.4rem);
+    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
     line-height: 1.2;
     color: var(--color-surface);
     /* texto claro sobre lavado */
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
     margin: 0;
-    color: #bcb8d9;
 }
 
 .subtitle {
     font-family: var(--font-body);
-    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
     line-height: 1.6;
-    color: color-mix(in oklab, var(--color-surface) 92%, var(--color-bg));
+    color: #f3f3f3;
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.18);
     margin-top: 0.75rem;
+}
+
+/* Variante más suave (opcional): usa el tinte alt2 en vez del alt principal */
+.soft::before {
+    background: var(--color-surface-alt2);
+    /* #f3f2ff */
+    opacity: 0.7;
+    mix-blend-mode: multiply;
 }
 
 /* Reduce motion */
