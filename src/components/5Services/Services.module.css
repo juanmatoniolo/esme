@@ -5,7 +5,7 @@
     overflow: hidden;
     padding-top: calc(var(--wave-h) + 2rem);
     padding-bottom: calc(var(--wave-h) + 2rem);
-    min-height: 130vh;
+    min-height: 120vh;
     align-content: center;
     color: #F3F2FF;
 }
@@ -61,3 +61,34 @@
 .waveBottom path {
     fill: var(--color-surface);
 }
+
+/*VIDEO */
+
+.grid {
+    width: 80%;
+    padding: 2rem 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.swiper {
+    padding-bottom: 2rem;
+    /* espacio para bullets */
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    text-align: center;
+    font-size: 3em;
+
+    font-weight: 800;
+    font-family: "Dancing Script", var(--font-heading);
+}
+

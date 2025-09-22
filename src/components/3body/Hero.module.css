@@ -12,6 +12,7 @@ HERO
     width: 100%;
     min-height: 60dvh;
     align-content: center;
+    margin-top: -1em;
 
 }
 
@@ -102,6 +103,7 @@ HERO
     .title {
         font-size: 1.9em;
         margin-bottom: .2em;
+        
     }
 
     .badges {
@@ -140,6 +142,7 @@ HERO
         margin-right: 0.6rem;
     }
 }
+
 
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
