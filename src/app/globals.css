@@ -30,8 +30,8 @@
     --shadow-md: 0 8px 24px rgba(34, 22, 14, 0.10);
 
     /* Tipografías */
+    --font-body: var(--font-ubuntu);
     --font-heading: "Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-    --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
 
 /* Reset suave + Bootstrap overrides mínimos */
@@ -39,6 +39,7 @@ body {
     background: var(--color-surface-alt2);
     color: var(--color-text);
     font-family: var(--font-body);
+    font-family: var(--font-body), sans-serif;
 }
 
 a,

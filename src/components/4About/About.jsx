@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Script from "next/script";
-import Link from "next/link";
 import styles from "./About.module.css";
 
 export default function About() {
@@ -15,7 +14,7 @@ export default function About() {
             "@type": "PostalAddress",
             addressLocality: "Carcarañá",
             addressRegion: "Santa Fe",
-            addressCountry: "AR"
+            addressCountry: "AR",
         },
         knowsAbout: [
             "Psicoanálisis",
@@ -23,9 +22,9 @@ export default function About() {
             "Constelaciones familiares",
             "Registros Akáshicos",
             "Talleres vivenciales",
-            "Terapia online"
+            "Terapia online",
         ],
-        url: "https://esme-delta.vercel.app/#sobre-mi"
+        url: "https://esme-delta.vercel.app/#sobre-mi",
     };
 
     return (
@@ -36,41 +35,67 @@ export default function About() {
             itemScope
             itemType="https://schema.org/Person"
         >
-            <Script id="ld-person" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personLD) }} />
+            <Script
+                id="ld-person"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(personLD) }}
+            />
 
             <div className="container">
                 <h2 id="about-title" className={styles.title}>
-                    Primero me presento formalmente…
+                    Hola! Soy Esme
                 </h2>
 
                 <div className={styles.cols}>
+                    {/* Texto */}
                     <div>
                         <p className={styles.copy}>
-                            Como les mencioné arriba, mi nombre es{" "}
-                            <strong itemProp="name">Esmeralda Perisset</strong>. Soy{" "}
+                            Mi nombre es <strong itemProp="name">Esmeralda Perisset</strong>. Soy{" "}
                             <span itemProp="jobTitle"><strong>psicóloga clínica</strong></span> y vivo en{" "}
-                            {/* ✅ PostalAddress inline, sin <address> */}
-                            <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress" className="d-inline">
+                            <span
+                                itemProp="address"
+                                itemScope
+                                itemType="https://schema.org/PostalAddress"
+                                className="d-inline"
+                            >
                                 <span itemProp="addressLocality">Carcarañá</span>,{" "}
                                 <span itemProp="addressRegion">Santa Fe</span>,{" "}
                                 <span itemProp="addressCountry">Argentina</span>
                             </span>
-                            . Mi base es el <strong>Psicoanálisis</strong> y, según cada caso, integro herramientas
-                            como <em>Biodescodificación</em>, <em>Constelaciones Familiares</em> y <em>Registros Akáshicos</em>.
-                            Creo profundamente que <em>comprendernos, alivia</em>. Este espacio existe para darte herramientas claras
-                            que te acerquen a tu bienestar. Trabajo con una <strong>escucha empática y sin juicios</strong>, cuidando la{" "}
-                            <strong>confidencialidad</strong> y respetando los <strong>tiempos</strong> de cada proceso. Ofrezco{" "}
-                            <strong>sesiones 1 a 1</strong> de forma <strong>presencial y online</strong>, además de{" "}
-                            <strong>talleres vivenciales</strong> (y material grabado para avanzar a tu ritmo). También soy autora de{" "}
-                            <strong>“Líneas sinceras”</strong>.
+                            .
                         </p>
 
-                 {/*        <p className="mb-0">
-                            <Link href="#taller" className="link-primary">Conocé el Taller</Link> ·{" "}
-                            <Link href="#contacto" className="link-primary">Agendá una sesión</Link>
-                        </p> */}
+                        <p className={styles.copy}>
+                            La base de mi formación es el <strong>Psicoanálisis</strong>. Amo la idea de
+                            que no somos “individuos”, sino “sujetos” barrados, divididos entre una parte{" "}
+                            <em>consciente</em> y otra <em>inconsciente</em>. La mayor parte del tiempo
+                            es nuestro inconsciente el que nos guía, por eso es tan importante descubrir
+                            y comprender su funcionamiento.
+                        </p>
+
+                        <p className={styles.copy}>
+                            Trabajo en consultorio hace muchos años. Este mismo camino, sumado a mi
+                            proceso personal, me llevó a explorar otras herramientas como{" "}
+                            <em>Biodescodificación</em>, <em>Constelaciones familiares</em> y{" "}
+                            <em>Registros Akáshicos</em>. Primero las viví en mi propio cuerpo, luego las
+                            estudié y hoy las aplico según cada caso y la historia de cada consultante.
+                        </p>
+
+                        <p className={styles.copy}>
+                            También coordino <strong>talleres de autoconocimiento</strong>, donde
+                            comparto estas herramientas para quienes buscan explorar y comprenderse más
+                            profundamente.
+                        </p>
+
+                        <p className={styles.copy}>
+                            Creo profundamente que <q>comprendernos, alivia</q>. El sentido de este
+                            espacio es brindarte recursos para que aprendas a{" "}
+                            <strong>comprenderte</strong> y eso te traiga <strong>alivio</strong>.
+                            ¿Te animás?
+                        </p>
                     </div>
 
+                    {/* Foto */}
                     <figure className={styles.photo}>
                         <Image
                             src="/assets/esmeralda.webp"
@@ -80,7 +105,9 @@ export default function About() {
                             className={styles.img}
                             priority={false}
                         />
-                        <figcaption className="visually-hidden">Retrato de Esmeralda Perisset, psicóloga clínica.</figcaption>
+                        <figcaption className="visually-hidden">
+                            Retrato de Esmeralda Perisset, psicóloga clínica.
+                        </figcaption>
                     </figure>
                 </div>
             </div>

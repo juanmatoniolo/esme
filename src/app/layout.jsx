@@ -1,10 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
-import { Nunito, Dancing_Script } from "next/font/google";
+import { Nunito, Dancing_Script, Ubuntu } from "next/font/google";
 import BootstrapClient from "@/components/Boostrap/BootstrapClient";
 
 const nunito = Nunito({ subsets: ["latin"], variable: "--font-nunito", weight: ["400", "500", "600", "700"] });
 const dancingScript = Dancing_Script({ subsets: ["latin"], variable: "--font-dancing", weight: ["400", "500", "600", "700"] });
+const ubuntu = Ubuntu({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-ubuntu",
+});
 
 export const metadata = {
   metadataBase: new URL("https://esme-delta.vercel.app"),
@@ -42,9 +47,10 @@ export const metadata = {
   }
 };
 
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="es" className={`${nunito.variable} ${dancingScript.variable}`}>
+    <html lang="es" className={`${nunito.variable} ${dancingScript.variable} ${ubuntu.variable}`}>
       <body suppressHydrationWarning={true}>
         <BootstrapClient />
         {children}

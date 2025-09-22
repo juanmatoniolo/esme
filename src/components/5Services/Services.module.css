@@ -4,63 +4,145 @@
     overflow: hidden;
     padding-top: calc(var(--wave-h) + 2rem);
     padding-bottom: calc(var(--wave-h) + 2rem);
-
-    /* Alturas responsivas */
-    min-height: 110vh;
-    /* fallback para navegadores viejos */
-    min-height: 80dvh;
-    /* iOS Safari y navegadores modernos */
-    max-height: 120vh;
-
-    align-content: center;
+    /* altura mínima fluida */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     color: #F3F2FF;
-}
-
-/* Pantallas muy pequeñas (teléfonos hasta 425px) */
-@media (min-width: 450px) {
-    .section {
-
-        height: 120vh;
-        /* asegura que llene la pantalla */
-    }
-
-    .grid {
-        width: 95%;
-        flex-direction: column;
-        padding: 1.5rem 0;
-    }
-
-    .title {
-        font-size: 2rem;
-        /* más legible en móvil */
-        line-height: 1.3;
-    }
-
-    .swiper {
-        padding-bottom: 1.5rem;
-        /* menos espacio en móvil */
-    }
-
-    .swiper-slide {
-        width: 100%;
-        max-width: 320px;
-        /* limita el ancho de las cards */
-    }
-}
-
-
-/* Si el navegador soporta dvh, sobreescribimos */
-@supports (min-height: 70dvh) {
-    .section {
-        min-height: 70dvh;
-    }
+    padding: 3em;
 }
 
 .fondoSection {
     background-color: #F3F2FF;
 }
 
-/* Olas */
+/* Título */
+.title {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    /* fluido */
+    font-weight: 800;
+    font-family: "Dancing Script", var(--font-heading);
+    line-height: 1.3;
+    margin-bottom: 2rem;
+
+}
+
+/* Contenedor del contenido */
+.section2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Card / Video */
+.card {
+    width: 60%;
+    /* ocupa siempre el 80% */
+    max-width: 1200px;
+    /* límite en pantallas grandes */
+    background: var(--color-surface, #fff);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--color-border, #ddd);
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Video player */
+.media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: linear-gradient(135deg, #e66465, #9198e5);
+}
+
+.media>div {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Texto dentro de la card */
+.text {
+    padding: 1em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 700;
+    color: var(--color-text, #222);
+    margin: 0 0 0.5rem;
+}
+
+.p {
+    color: var(--color-text-muted, #666);
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.5;
+    margin: 0 0 1rem;
+}
+
+.boton {
+    display: inline-block;
+    width: 80%;
+    background: var(--color-primary, #0070f3);
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.15s ease;
+    text-decoration: none;
+    -webkit-transition: background 0.3s ease, transform 0.15s ease;
+    -moz-transition: background 0.3s ease, transform 0.15s ease;
+    -ms-transition: background 0.3s ease, transform 0.15s ease;
+    -o-transition: background 0.3s ease, transform 0.15s ease;
+}
+
+.boton:hover {
+    background: var(--color-primary-hover, #005bb5);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+/* Botón Play */
+.playButton {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.playButton:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+/* ===== Olas ===== */
 .waveTop,
 .waveBottom {
     position: absolute;
@@ -69,7 +151,6 @@
     height: var(--wave-h);
     pointer-events: none;
     z-index: 10;
-    /* siempre por encima */
 }
 
 .waveTop {
@@ -84,7 +165,6 @@
     transform-origin: center;
 }
 
-/* Colores de las olas */
 .waveTop path {
     fill: var(--color-surface-alt2);
 }
@@ -93,30 +173,94 @@
     fill: var(--color-surface);
 }
 
-/* VIDEO */
-.grid {
-    width: 80%;
-    padding: 2rem 0;
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .card {
+        width: 100%;
+        padding: 0;
+        background-color: var(--color-surface-alt);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+        background: var(--color-surface, #fff);
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid var(--color-border, #ddd);
+    }
+
+
+    .boton {
+        display: inline-block;
+        width: 100%;
+        color: #fff;
+        padding: 0.6rem 1rem;
+        border-radius: 999px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-align: center;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.15s ease;
+        text-decoration: none;
+        -webkit-transition: background 0.3s ease, transform 0.15s ease;
+        -moz-transition: background 0.3s ease, transform 0.15s ease;
+        -ms-transition: background 0.3s ease, transform 0.15s ease;
+        -o-transition: background 0.3s ease, transform 0.15s ease;
+        margin: auto;
+        padding: -2em;
+    }
 }
 
-.swiper {
-    padding-bottom: 2rem;
-    /* espacio para bullets */
+
+/* ===== Responsive ===== */
+@media (min-width: 602px) {
+
+
+    .section {
+        position: relative;
+        background: var(--color-surface-alt);
+        overflow: hidden;
+        padding-top: calc(var(--wave-h) + 2rem);
+        padding-bottom: calc(var(--wave-h) + 2rem);
+        height: 120dvh;
+        display: flex;
+        padding: 4dvb;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #F3F2FF;
+    }
+
+
+
 }
 
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-}
 
-.title {
-    text-align: center;
-    font-size: 3em;
-    font-weight: 800;
-    font-family: "Dancing Script", var(--font-heading);
+/* ===== Responsive ===== */
+@media (min-width: 1200px) {
+
+
+    .section {
+        position: relative;
+        background: var(--color-surface-alt);
+        overflow: hidden;
+        padding-top: calc(var(--wave-h) + 2rem);
+        padding-bottom: calc(var(--wave-h) + 2rem);
+        height: 150dvh;
+        display: flex;
+        padding: 4em;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #F3F2FF;
+    }
+
+    .card {
+        width: 65%;
+        padding: 0;
+        /* en móviles casi todo el ancho */
+    }
+
+
+
 }

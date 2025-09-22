@@ -103,7 +103,7 @@ HERO
     .title {
         font-size: 1.9em;
         margin-bottom: .2em;
-        
+
     }
 
     .badges {
@@ -119,6 +119,8 @@ HERO
     .ctaPrimary {
         margin-right: 0.6rem;
     }
+
+
 }
 
 /* Responsive */
@@ -141,6 +143,9 @@ HERO
     .ctaPrimary {
         margin-right: 0.6rem;
     }
+
+
+
 }
 
 
@@ -152,3 +157,4 @@ HERO
         transition: none !important;
     }
 }
+

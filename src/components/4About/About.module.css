@@ -33,7 +33,7 @@
     color: var(--color-text);
     line-height: 2;
     font-size: 1.1em;
-    
+
 }
 
 /* Foto (contenedor del <Image fill>) */
@@ -93,4 +93,12 @@
         width: 80%;
         margin: auto;
     }
+}
+
+.copy {
+    color: var(--color-text);
+    line-height: 1.8;
+    /* más aireado */
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
 }
