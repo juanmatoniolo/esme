@@ -21,9 +21,9 @@ export default function Banner() {
             {/* Contenido opcional (podés borrar si no querés texto) */}
             <div className={`container ${styles.inner}`}>
                 <h1 className={styles.title}>Psicología con calidez y claridad</h1>
-                <p className={styles.subtitle}>
+            {/*   <p className={styles.subtitle}>
                     Acompañamiento profesional para tu proceso personal.
-                </p>
+                </p> */}
             </div>
         </header>
     );
