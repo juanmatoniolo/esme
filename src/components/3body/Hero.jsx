@@ -13,12 +13,15 @@ export default function Hero() {
 
                 <h1 className={styles.title}>Soy Esmeralda, Psicóloga Clínica</h1>
 
-                <p className="mb-2 mt-3">
-                    <span className="badge-soft me-2">Psicoanálisis</span>
-                    <span className="badge-soft me-2">Biodescodificación</span>
-                    <span className="badge-soft me-2">Constelaciones</span>
-                    <span className="badge-soft">Registros</span>
-                </p>
+                <div className={`${styles.badges1}`}>
+
+                    <p className={` badge-soft me-2 ${styles.badges}`}>Psicoanálisis</p>
+                    <p className={`badge-soft me-2 ${styles.badges}`}>Biodescodificación</p>
+                    <p className={`badge-soft me-2 ${styles.badges}`}>Constelaciones</p>
+                    <p className={` badge-soft me-2 ${styles.badges}`}>Registros</p>
+                </div>
+
+
 
                 <p className={styles.subtitle}>
                     Comprendernos, alivia. Te acompaño con herramientas claras para

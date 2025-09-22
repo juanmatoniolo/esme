@@ -7,14 +7,13 @@ const nunito = Nunito({ subsets: ["latin"], variable: "--font-nunito", weight: [
 const dancingScript = Dancing_Script({ subsets: ["latin"], variable: "--font-dancing", weight: ["400", "500", "600", "700"] });
 
 export const metadata = {
-  metadataBase: new URL("https://esme-delta.vercel.app"), // 👈 importante para URLs absolutas
+  metadataBase: new URL("https://esme-delta.vercel.app"),
   title: "Esmeralda Perisset | Psicóloga Clínica",
   description: "Soy Esmeralda, psicóloga clínica. Descubrí mis talleres y mi libro 'Líneas sinceras'.",
 
-  // Usa PNG/ICO (no webp) para máxima compatibilidad
   icons: {
     icon: [
-      { url: "/favicon.ico" }, // fallback universal
+      { url: "/favicon.ico" },
       { url: "/favicon-32x32.png", sizes: "32x32" }
     ],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }]
@@ -30,7 +29,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.jpg",  // 👈 será https://esme-delta.vercel.app/og-image.jpg
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Esmeralda Perisset | Psicóloga Clínica"
