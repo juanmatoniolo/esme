@@ -17,7 +17,7 @@
 }
 
 /* Pantallas muy pequeñas (teléfonos hasta 425px) */
-@media (max-width: 450px) {
+@media (min-width: 450px) {
     .section {
 
         height: 120vh;
