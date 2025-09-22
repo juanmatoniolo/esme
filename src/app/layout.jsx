@@ -13,13 +13,17 @@ export const metadata = {
 
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-32x32.png", sizes: "32x32" }
+      { url: "/assets/favicon.ico" },
+      { url: "/assets/favicon-16x16.webp", sizes: "16x16", type: "image/webp" },
+      { url: "/assets/favicon-32x32.webp", sizes: "32x32", type: "image/webp" }
     ],
-    apple: [{ url: "/apple-touch-icon.webp", sizes: "180x180" }]
+    apple: [
+      { url: "/assets/apple-touch-icon.webp", sizes: "180x180", type: "image/webp", media: "(prefers-color-scheme: light)" },
+      { url: "/assets/apple-touch-icon-dark.webp", sizes: "180x180", type: "image/webp", media: "(prefers-color-scheme: dark)" }
+    ]
   },
 
-  manifest: "/manifest.json",
+  manifest: "/assets/manifest.json",
 
   openGraph: {
     title: "Esmeralda Perisset | Psicóloga Clínica",
@@ -28,18 +32,13 @@ export const metadata = {
     siteName: "Esmeralda Perisset",
     type: "website",
     images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Esmeralda Perisset | Psicóloga Clínica"
-      }
+      { url: "/assets/og-image.webp", width: 1200, height: 630, alt: "Esmeralda Perisset | Psicóloga Clínica" }
     ]
   },
 
   twitter: {
     card: "summary_large_image",
-    images: ["/og-image.jpg"]
+    images: ["/assets/og-image.webp"]
   }
 };
 

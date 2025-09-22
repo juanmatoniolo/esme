@@ -14,28 +14,42 @@
 	"categories": ["health", "education", "lifestyle"],
 	"icons": [
 		{
-			"src": "/android-chrome-192x192.jpg",
+			"src": "/assets/android-chrome-192x192.jpg",
 			"sizes": "192x192",
-			"type": "image/jpg",
+			"type": "image/jpeg",
 			"purpose": "any",
 			"media": "(prefers-color-scheme: light)"
 		},
 		{
-			"src": "/android-chrome-512x512.jpg",
+			"src": "/assets/android-chrome-512x512.jpg",
 			"sizes": "512x512",
-			"type": "image/jpg",
+			"type": "image/jpeg",
 			"purpose": "any",
 			"media": "(prefers-color-scheme: light)"
 		},
 		{
-			"src": "/android-chrome-192x192-dark.webp",
+			"src": "/assets/android-chrome-192x192.webp",
+			"sizes": "192x192",
+			"type": "image/webp",
+			"purpose": "any",
+			"media": "(prefers-color-scheme: light)"
+		},
+		{
+			"src": "/assets/android-chrome-512x512.webp",
+			"sizes": "512x512",
+			"type": "image/webp",
+			"purpose": "any",
+			"media": "(prefers-color-scheme: light)"
+		},
+		{
+			"src": "/assets/android-chrome-192x192-dark.webp",
 			"sizes": "192x192",
 			"type": "image/webp",
 			"purpose": "any",
 			"media": "(prefers-color-scheme: dark)"
 		},
 		{
-			"src": "/android-chrome-512x512-dark.webp",
+			"src": "/assets/android-chrome-512x512-dark.webp",
 			"sizes": "512x512",
 			"type": "image/webp",
 			"purpose": "any",
@@ -43,21 +57,9 @@
 		}
 	],
 	"shortcuts": [
-		{
-			"name": "Taller",
-			"short_name": "Taller",
-			"url": "/#taller"
-		},
-		{
-			"name": "Libro",
-			"short_name": "Libro",
-			"url": "/#libro"
-		},
-		{
-			"name": "Contacto",
-			"short_name": "Contacto",
-			"url": "/#contacto"
-		}
+		{ "name": "Taller", "short_name": "Taller", "url": "/#taller" },
+		{ "name": "Libro", "short_name": "Libro", "url": "/#libro" },
+		{ "name": "Contacto", "short_name": "Contacto", "url": "/#contacto" }
 	],
 	"prefer_related_applications": false
 }
