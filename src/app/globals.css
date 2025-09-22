@@ -8,9 +8,6 @@
     --color-surface-alt: #bcb8d9;
     --color-surface-alt2: #f3f2ff;
 
-
-    /* secciones alternadas */
-
     /* Brand */
     --color-primary: #74719e;
     /* botones / links */
@@ -39,7 +36,7 @@
 
 /* Reset suave + Bootstrap overrides mínimos */
 body {
-    background: var(--color-bg);
+    background: var(--color-surface-alt2);
     color: var(--color-text);
     font-family: var(--font-body);
 }

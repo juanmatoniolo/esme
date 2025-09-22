@@ -1,0 +1,97 @@
+.section {
+    background: var(--color-surface-alt2);
+    /* fix: alt2 */
+    padding: clamp(2.5rem, 6vw, 4rem) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.eyebrow {
+    color: var(--color-primary);
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    margin: 0 0 .5rem;
+}
+
+.title {
+    font-family: var(--font-heading);
+    color: var(--color-text);
+    margin: 0 0 1rem;
+}
+
+/* Layout */
+.cols {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+    align-items: start;
+    /* evita comprimir la imagen */
+}
+
+
+/* Texto */
+.copy {
+    color: var(--color-text);
+    line-height: 2;
+    font-size: 1.1em;
+    
+}
+
+/* Foto (contenedor del <Image fill>) */
+.photo {
+    position: relative;
+    /* requerido para next/image fill */
+    margin: 0;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    /* da altura estable en mobile */
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface-alt2);
+}
+
+
+
+
+@media (min-width: 992px) {
+    .photo {
+        aspect-ratio: 16 / 10;
+        /* más panorámico en desktop */
+        min-height: 420px;
+        /* por si el texto es corto */
+    }
+}
+
+.img {
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    .img {
+        transition: none !important;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .cols {
+        grid-template-columns: 1.1fr 0.9fr;
+        /* texto | foto */
+        gap: 1.5rem;
+    }
+}
+
+
+
+
+/* Mobile: ya cubre con aspect-ratio, no hace falta height:auto */
+@media (max-width: 500px) {
+    .photo {
+        width: 80%;
+        margin: auto;
+    }
+}

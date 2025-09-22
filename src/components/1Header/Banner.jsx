@@ -10,7 +10,7 @@ export default function Banner() {
             aria-label="Esmeralda Perisset, Psicóloga Clínica"
         >
             <Image
-                src="/assets/esmeBanner.webp"
+                src="/assets/eme.webp"
                 alt=""
                 fill
                 priority

@@ -1,5 +1,5 @@
 /* ======================
-   HERO
+HERO
 ====================== */
 
 .hero {
@@ -8,9 +8,11 @@
             color-mix(in oklab, var(--color-primary-soft) 22%, transparent) 0%,
             transparent 60%),
         linear-gradient(180deg, var(--color-bg) 0%, #ffffff 100%);
-    margin-top: 3em;
     border-bottom: 1px solid var(--color-border);
     width: 100%;
+    min-height: 60dvh;
+    align-content: center;
+
 }
 
 
