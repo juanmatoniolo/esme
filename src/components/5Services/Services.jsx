@@ -8,20 +8,50 @@ const items = [
 
 export default function Services() {
     return (
-        <section id="servicios" className={styles.section} aria-labelledby="services-title">
-            <div className="container">
-                <p className={styles.eyebrow}>Servicios</p>
-                <h2 id="services-title" className={styles.title}>Cómo puedo ayudarte</h2>
+        <section className={styles.fondoSection}>
 
-                <div className={styles.grid}>
-                    {items.map((it) => (
-                        <article className={styles.card} key={it.t}>
-                            <h3 className={styles.cardTitle}>{it.t}</h3>
-                            <p className={styles.cardDesc}>{it.d}</p>
-                        </article>
-                    ))}
+            <div className={styles.section}>
+                {/* OLA SUPERIOR */}
+                <svg className={styles.waveTop} viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M0,80 C240,40 480,40 720,80 S1200,120 1440,80 L1440,0 L0,0 Z" />
+                </svg>
+
+                <div id="servicios" className={styles.section} aria-labelledby="services-title">
+                    {/* OLA SUPERIOR (simétrica) */}
+                    <svg className={styles.waveTop} viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+                        {/* fill = color de la sección anterior */}
+                        <path
+                            d="M0,80 C240,40 480,40 720,80 S1200,120 1440,80 L1440,0 L0,0 Z"
+                            fill="var(--color-surface-alt)"
+                        />
+                    </svg>
+
+                    <div className="container">
+                        <h2 id="services-title" className={styles.title}>Cómo puedo ayudarte</h2>
+
+                        <div className={styles.grid}>
+                            {items.map((it) => (
+                                <article className={styles.card} key={it.t}>
+                                    <h3 className={styles.cardTitle}>{it.t}</h3>
+                                    <p className={styles.cardDesc}>{it.d}</p>
+                                </article>
+                            ))}
+                        </div>
+                    </div>
+
+                    <svg className={styles.waveBottom} viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+                        <path
+                            d="M0,80 C240,40 480,40 720,80 S1200,120 1440,80 L1440,0 L0,0 Z"
+                            fill="var(--color-surface-alt)"
+                        />
+                    </svg>
                 </div>
+                {/* OLA INFERIOR */}
+                <svg className={styles.waveBottom} viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M0,80 C240,40 480,40 720,80 S1200,120 1440,80 L1440,0 L0,0 Z" />
+                </svg>
             </div>
         </section>
+
     );
 }

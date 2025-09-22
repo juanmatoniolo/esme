@@ -1,45 +1,63 @@
 .section {
+    position: relative;
+    /* crea stacking context */
     background: var(--color-surface-alt);
-    padding: clamp(2.5rem, 6vw, 4rem) 0;
-    border-bottom: 1px solid var(--color-border);
+    overflow: hidden;
+    padding-top: calc(var(--wave-h) + 2rem);
+    padding-bottom: calc(var(--wave-h) + 2rem);
+    min-height: 130vh;
+    align-content: center;
+    color: #F3F2FF;
 }
 
-.eyebrow {
-    color: #fff;
-    font-weight: 700;
-    letter-spacing: .04em;
-    text-transform: uppercase;
-    margin: 0 0 .5rem;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, .15);
+.fondoSection {
+    background-color: #F3F2FF;
+    height: 100%;
 }
 
-.title {
-    color: #fff;
-    margin: 0 0 1rem;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, .12);
+/* Olas */
+.waveTop,
+.waveBottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: var(--wave-h);
+    pointer-events: none;
+    /* no bloquea clicks */
+    z-index: 10;
+    /* por encima del contenido */
 }
 
-.grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+/* Arriba, sin hacks de margin negativo */
+.waveTop {
+    top: 0;
+    transform: scaleY(1);
+    /*espejada*/
+    transform-origin: center;
+    -webkit-transform: scaleY(1);
+    -moz-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    -o-transform: scaleY(1);
 }
 
-.card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    padding: 1rem;
-    box-shadow: var(--shadow-sm);
+/* Abajo, misma curva */
+.waveBottom {
+    bottom: 0;
+    transform: none;
+    transform-origin: center;
+    transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -moz-transform: scaleY(-1);
+    -ms-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
 }
 
-.cardTitle {
-    margin: 0 0 .25rem;
-    color: var(--color-text);
-    font-weight: 700;
+/* Colores de las olas: usa fill en el path */
+.waveTop path {
+    fill: var(--color-surface-alt2);
 }
 
-.cardDesc {
-    margin: 0;
-    color: var(--color-text-muted);
+/* color de la sección anterior */
+.waveBottom path {
+    fill: var(--color-surface);
 }
