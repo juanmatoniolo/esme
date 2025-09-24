@@ -41,9 +41,9 @@ export default function Book({
     );
 
     return (
-        <section className={styles.section} aria-labelledby="book-title">
-            <div className={styles.wrapper}>
-                <div className={styles.header}>
+        <section className={` ${styles.section}`} aria-labelledby="book-title">
+            <div className={`${styles.wrapper} container`}>
+                <div className={`${styles.header} container`}>
                     <h2 id="book-title" className={styles.title}>{BOOK_TITLE}</h2>
                     <p className={styles.subtitle}> Un recorrido íntimo por sensaciones y momentos, para acompañarte en tu propio proceso de comprensión y alivio. Disponible en Carcarañá en `Con Aroma a Libro` y `Aurora Santería`. Para envíos a otras ciudades, podés comprarlo a través de la editorial.</p>
                 </div>
