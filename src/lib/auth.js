@@ -1,4 +1,3 @@
-// lib/auth.js
 const encoder = new TextEncoder();
 
 function b64url(input) {
