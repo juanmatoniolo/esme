@@ -1,210 +1,157 @@
-
-
-/* ===== Sección / Layout ===== */
+/* ===== Sección general ===== */
 .section {
-    background: var(--color-surface-alt);
-    padding: clamp(2.5rem, 6vw, 4rem) 0;
+	background: var(--color-surface-alt);
+	padding: clamp(2.5rem, 6vw, 4rem) 0;
 }
 
 .wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 20px;
 }
 
-/* ===== Encabezado ===== */
 .header {
-    margin-bottom: clamp(14px, 3vw, 20px);
+	margin-bottom: clamp(14px, 3vw, 20px);
+	text-align: center;
 }
 
 .title {
-    font-family: var(--font-heading);
-    font-size: clamp(1.5rem, 2.4vw, 2.25rem);
-    line-height: 1.15;
-    margin: 0 0 6px 0;
-    color: var(--color-text);
-    font-weight: 700;
+	font-family: var(--font-heading);
+	font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+	line-height: 1.15;
+	margin: 0 0 6px 0;
+	color: var(--color-text);
+	font-weight: 700;
 }
 
 .subtitle {
-    margin: 0;
-    color: var(--color-text-muted);
-    font-size: clamp(0.95rem, 1.4vw, 1.05rem);
-    font-weight: 500;
-    font-size: medium;
+	margin: 0;
+	color: var(--color-text-muted);
+	font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+	font-weight: 500;
 }
 
 /* ===== CTA ===== */
 .ctaPrimary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 16px;
-    background: var(--color-primary);
-    color: #fff;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-md);
-    text-decoration: none;
-    font-weight: 600;
-    transition: background .18s ease, transform .18s ease;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 12px 16px;
+	background: var(--color-primary);
+	color: #fff;
+	border-radius: var(--radius);
+	box-shadow: var(--shadow-md);
+	text-decoration: none;
+	font-weight: 600;
+	transition: background 0.18s ease, transform 0.18s ease;
 }
 
 .ctaPrimary:hover {
-    background: var(--color-primary-hover);
-    transform: translateY(-1px);
-    color: #fff;
+	background: var(--color-primary-hover);
+	transform: translateY(-1px);
+	color: #fff;
 }
 
 .ctaBottom {
-    margin-top: 16px;
-    display: flex;
-    justify-content: center;
+	margin-top: 24px;
+	display: flex;
+	justify-content: center;
 }
 
-/* ===== Slider ===== */
+/* ===== Slider general ===== */
 .sliderWrap {
-    position: relative;
-    margin-top: 16px;
-    max-width: 960px;
-    /* evita estirar a full width en desktop */
-    margin-left: auto;
-    margin-right: auto;
+	width: 100%;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-/* Tarjeta del slide */
+/* Slide */
 .slide {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    overflow: hidden;
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	border-radius: 0;
 }
 
 .figure {
-    margin: 0;
+	margin: 0;
+	padding: 0;
+	background: transparent;
 }
-
-/* Contenedor de imagen con proporción y límite de altura */
-.imageBox {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    /* proporción vertical agradable en mobile */
-    max-height: 70vh;
-    /* límite general en mobile para no ocupar toda la vista */
-    overflow: hidden;
-}
-
-/* Imagen: SIEMPRE cover (pedido) */
-.image {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    /* cover garantizado */
-    object-position: center;
-    background: var(--color-bg);
-}
-
-/* Caption opcional */
-.caption {
-    font-size: 12px;
-    color: var(--color-text-muted);
-    padding: 8px 10px;
-}
-
-/* ===== Swiper (solo bullets; sin botones) ===== */
-.sliderWrap :global(.swiper) {
-    padding-bottom: 32px;
-}
-
-.sliderWrap :global(.swiper-slide) {
-    height: auto;
-}
-
-.sliderWrap :global(.swiper-pagination-bullet) {
-    background: var(--color-primary);
-    opacity: .35;
-}
-
-.sliderWrap :global(.swiper-pagination-bullet-active) {
-    opacity: 1;
-}
-
-/* ===== Tablet ===== */
-@media (min-width: 768px) {
-    .sliderWrap {
-        max-width: 1040px;
-    }
-
-    .sliderWrap :global(.swiper) {
-        padding-bottom: 36px;
-    }
-}
-
-/* ===== Desktop (≥1024px): 60% de alto de la vista como MÁXIMO) ===== */
-@media (min-width: 1024px) {
-    .sliderWrap {
-        max-width: 1100px;
-    }
-
-    .imageBox {
-        aspect-ratio: 16 / 9;
-        /* apaisado elegante en desktop */
-        max-height: 60vh;
-        /* pedido: no exceder 60% de la vista */
-    }
-
-    .sliderWrap :global(.swiper) {
-        padding-bottom: 40px;
-    }
-}
-
-/* ===== Desktop grande ===== */
-@media (min-width: 1280px) {
-    .wrapper {
-        max-width: 1280px;
-    }
-
-    .sliderWrap {
-        max-width: 70%;
-    }
-
-
-
-    /* mantiene max-height: 60vh (no se toca); cover ya se respeta por .image */
-}
-
-
-
 
 /* Contenedor de imagen */
 .imageBox {
-    position: relative;
-    width: 100%;
-
-    /* Tamaño por defecto (mobile-first) */
-    aspect-ratio: var(--book-image-ratio-mobile);
-    max-height: var(--book-image-maxh-mobile);
-
-    overflow: hidden;
+	aspect-ratio: 16 / 9;
+	max-height: 70vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--color-surface-alt); /* fondo igual al de la sección */
+	overflow: hidden;
+	width: 100%;
 }
 
-/* Imagen: SIEMPRE cover */
+/* Imagen */
 .image {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    /* <- cover solicitado */
-    object-position: center;
-    background: var(--color-bg);
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+	display: block;
 }
 
-/* Desktop: un poco más alto y con otra proporción */
+/* Caption (opcional) */
+.caption {
+	font-size: 12px;
+	color: var(--color-text-muted);
+	padding: 8px 10px;
+	text-align: center;
+}
+
+/* Swiper */
+.sliderWrap :global(.swiper) {
+	padding-bottom: 32px;
+}
+
+.sliderWrap :global(.swiper-slide) {
+	display: flex;
+	justify-content: center;
+}
+
+.sliderWrap :global(.swiper-pagination-bullet) {
+	background: var(--color-primary);
+	opacity: 0.35;
+}
+
+.sliderWrap :global(.swiper-pagination-bullet-active) {
+	opacity: 1;
+}
+
+/* ===== Responsive tweaks ===== */
+@media (min-width: 768px) {
+	.imageBox {
+		aspect-ratio: 4 / 3;
+		max-height: 70vh;
+	}
+}
+
 @media (min-width: 1024px) {
-    .imageBox {
-        aspect-ratio: var(--book-image-ratio-desktop);
-        max-height: var(--book-image-maxh-desktop);
-    }
+	.sliderWrap {
+		max-width: 100%;
+		padding: 0 40px;
+	}
+	.imageBox {
+		aspect-ratio: 16 / 9;
+		max-height: 65vh;
+	}
+}
+
+@media (min-width: 1280px) {
+	.sliderWrap {
+		padding: 0 60px;
+	}
+	.imageBox {
+		max-height: 60vh;
+	}
 }

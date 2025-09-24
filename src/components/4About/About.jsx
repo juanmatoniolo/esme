@@ -98,7 +98,7 @@ export default function About() {
                     {/* Foto */}
                     <figure className={styles.photo}>
                         <Image
-                            src="/assets/esmeralda.webp"
+                            src="/assets/esmeportada.webp"
                             alt="Esmeralda Perisset, psicóloga clínica en Carcarañá"
                             fill
                             sizes="(min-width: 1200px) 720px, (min-width: 768px) 420px, 100vw"
