@@ -32,6 +32,7 @@ export async function sendContact(prevState, formData) {
 			message,
 			createdAt: new Date().toISOString(),
 			source: "website",
+			mensajeLeido: false, // 👈 Nuevo campo por defecto
 		};
 
 		const res = await fetch(`${RTDB_BASE}/contacts.json`, {

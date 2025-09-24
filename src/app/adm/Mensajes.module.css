@@ -1,0 +1,225 @@
+.container {
+    padding: 1rem;
+    background: var(--color-surface-alt2);
+    min-height: 80vh;
+}
+
+.title {
+    font-family: var(--font-heading);
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+/* ---- FILTROS ---- */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.filters button {
+    padding: 6px 12px;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+
+.filters button:hover {
+    background: var(--color-primary-soft);
+}
+
+.filters .active {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* ---- TABLA EN ESCRITORIO ---- */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.table th {
+    background: var(--color-surface-alt);
+    font-weight: 600;
+}
+
+.read {
+    color: green;
+    font-weight: 600;
+}
+
+.unread {
+    color: red;
+    font-weight: 600;
+}
+
+/* ---- BOTONES DE ACCIONES ---- */
+.actionsCell {
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 6px;
+}
+
+.iconBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    text-decoration: none;
+}
+
+.iconBtn:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+}
+
+.btnMark {
+    background: #4caf50;
+    /* verde leído */
+}
+
+.btnDanger {
+    background: #b00020;
+    /* rojo eliminar */
+}
+
+.btnMail {
+    background: #0072c6;
+    /* azul tipo Outlook */
+}
+
+.btnWhatsapp {
+    background: #25d366;
+    /* verde WhatsApp */
+}
+
+/* ---- MÓVIL: convertir tabla en cards ---- */
+@media (max-width: 768px) {
+
+    .table,
+    .table thead,
+    .table tbody,
+    .table th,
+    .table td,
+    .table tr {
+        display: block;
+        width: 100%;
+    }
+
+    .table thead {
+        display: none;
+        /* ocultamos cabecera */
+    }
+
+    .table tr {
+        margin-bottom: 1rem;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius);
+        padding: 0.75rem;
+        background: var(--color-surface);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .table td {
+        border: none;
+        padding: 0.35rem 0;
+        font-size: 14px;
+
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        display: block;
+        margin-bottom: 0.25rem;
+        color: var(--color-text-muted);
+        font-size: 13px;
+    }
+
+    .actionsCell {
+        display: flex !important;
+        flex-flow: row nowrap;
+        gap: 1em;
+        margin-top: 1em;
+        justify-content: space-evenly;
+    }
+
+    .iconBtn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+
+/* ---- Confirmación de eliminación ---- */
+.confirmOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.confirmBox {
+    background: var(--color-surface);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    max-width: 320px;
+    text-align: center;
+}
+
+.confirmBox p {
+    margin-bottom: 1rem;
+    font-size: 15px;
+}
+
+.confirmActions {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.btnSmall {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+}
+
+.btnSmall:hover {
+    opacity: 0.9;
+}
