@@ -60,10 +60,11 @@ export default function Services() {
 
                 {/* OLLink INFERIOR */}
                 <svg
-                    Link className={styles.waveBottom}
+                    className={styles.waveBottom}
                     viewBox="0 0 1440 120"
                     preserveAspectRatio="none"
                     aria-hidden="true"
+                    focusable="false"
                 >
                     <path d="M0,80 C240,40 480,40 720,80 S1200,120 1440,80 L1440,0 L0,0 Z" />
                 </svg>

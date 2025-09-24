@@ -13,8 +13,10 @@ export default function Workshop() {
     return (
         <section id="taller" className={styles.section} aria-labelledby="workshop-title">
             <div className="container">
-                <p className={styles.eyebrow}>Taller</p>
-                <h2 id="workshop-title" className={styles.title}>Taller teórico–vivencial</h2>
+                <p className={styles.eyebrow}>FALTA COMPLETAR </p>
+                <h2 id="workshop-title" className={styles.title}>ESPERANDO MAS DATOS ...
+
+                </h2>
                 <ul className={styles.list}>
                     {points.map((p, i) => <li key={i}>{p}</li>)}
                 </ul>

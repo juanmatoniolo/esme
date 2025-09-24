@@ -1,32 +1,85 @@
-import Link from "next/link";
 import styles from "./Contact.module.css";
+import ContactFormClient from "./ContactFormClient";
 
-const PHONE_DISPLAY = "(0341) 3687985";
-const EMAIL = "laliperisset@hotmail.com";
-const MAP_URL = "https://www.google.com/maps/search/?api=1&query=Eva%20Per%C3%B3n%20500%2C%20Carcara%C3%B1%C3%A1%2C%20Santa%20Fe%2C%20Argentina";
-const WAPP = `https://wa.me/543413687985?text=${encodeURIComponent(
-    "Hola! Gracias por resonar con mi trabajo y animarte a contactarme! En breve me estoy comunicando con vos✨"
-)}`;
+function buildWhatsappHref() {
+	const phoneIntl = "543413687985";
+	const text = encodeURIComponent(
+		"Hola Esme 👋 Me gustaría coordinar una consulta. Vi tus servicios (Sesiones 1 a 1, Talleres, Libro 'Líneas sinceras')."
+	);
+	return `https://wa.me/${phoneIntl}?text=${text}`;
+}
 
 export default function Contact() {
-    return (
-        <section id="contacto" className={styles.section} aria-labelledby="contact-title">
-            <div className="container">
-                <p className={styles.eyebrow}>Contacto</p>
-                <div className={styles.card}>
-                    <p className={styles.line}><strong>Tel:</strong> {PHONE_DISPLAY}</p>
-                    <p className={styles.line}><strong>Mail:</strong> {EMAIL}</p>
-                    <p className={styles.line}>
-                        <strong>Ubicación:</strong> Consultorio en zona Urano — Eva Perón al 500, Carcarañá —
-                        <Link href={MAP_URL} target="_blank" rel="noopener noreferrer" className={styles.mapLink}> Ver mapa</Link>
-                    </p>
+	const mapAddress = "Eva Perón 500, Carcarañá, Santa Fe, Argentina";
+	const mapQuery = encodeURIComponent(mapAddress);
+	const whatsappHref = buildWhatsappHref();
 
-                    <div className={styles.ctas}>
-                        <Link href={WAPP} target="_blank" rel="noopener noreferrer" className={styles.primary}>WhatsApp</Link>
-                        <a href={`mailto:${EMAIL}`} className={styles.outline}>Enviar email</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+	return (
+		<section className={styles.section} aria-labelledby="contact-title">
+			<div className={styles.wrapper}>
+				<header className={styles.header}>
+					<h2 id="contacto" className={styles.title}>Contactos</h2>
+				</header>
+
+				{/* Grid principal: izquierda (WhatsApp + Form) | derecha (Mapa) */}
+				<div className={styles.grid}>
+					<div className={styles.stack}>
+						{/* Bloque 1: WhatsApp */}
+						<article className={styles.block} aria-labelledby="whats-title">
+							<div className={styles.blockHeader}>
+								<h3 id="whats-title" className={styles.cardTitle}>Contactar por WhatsApp</h3>
+								<p className={styles.lead}>
+									Podés contactarme a través de WhatsApp haciendo clic en el botón.
+									Si preferís, también podés dejarme tu consulta mediante el formulario
+									y te responderé por alguno de los medios de contacto que dejes.
+								</p>
+							</div>
+							<div className={styles.ctaRow}>
+								<a
+									className={styles.ctaPrimary}
+									href={whatsappHref}
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="Contactar por WhatsApp"
+								>
+									Enviar WhatsApp
+								</a>
+							</div>
+						</article>
+
+						{/* Bloque 2: Formulario */}
+						<article
+							className={`${styles.block} ${styles.formBox}`}
+							aria-labelledby="form-title"
+						>
+							<div className={styles.blockHeader}>
+								<h3 id="form-title" className={styles.cardTitle}>Escribime</h3>
+							</div>
+
+							<ContactFormClient whatsappHref={whatsappHref} />
+						</article>
+					</div>
+
+					{/* Bloque 3: Mapa */}
+					<aside className={styles.block} aria-labelledby="map-title">
+						<div className={styles.blockHeader}>
+							<h3 id="map-title" className={styles.cardTitle}>Ubicación</h3>
+							<p className={styles.mutedSmall}>{mapAddress}</p>
+						</div>
+
+						<div className={styles.embedMap}>
+							<figure style={{ margin: 0 }}>
+								<iframe
+									title="Mapa del consultorio"
+									loading="lazy"
+									src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
+									referrerPolicy="no-referrer-when-downgrade"
+								/>
+							</figure>
+						</div>
+					</aside>
+				</div>
+			</div>
+		</section>
+	);
 }

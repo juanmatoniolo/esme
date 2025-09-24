@@ -1,77 +1,324 @@
+/* app/src/components/8Contact/Contact.module.css */
+
+/* === Layout base === */
 .section {
-    background: var(--color-surface);
-    padding: clamp(2.5rem, 6vw, 4rem) 0;
-    border-bottom: 1px solid var(--color-border);
+    padding: 56px 0;
+    background: var(--color-surface-alt2);
 }
 
-.eyebrow {
-    color: var(--color-primary);
-    font-weight: 700;
-    letter-spacing: .04em;
-    text-transform: uppercase;
-    margin: 0 0 1rem;
+.wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    margin-bottom: 24px;
+}
+.mutedSmall { font-size: 12px; color: var(--color-text-muted); margin: 0; }
+
+
+.title {
+    font-family: "Dancing Script", var(--font-heading);
+    font-weight: 600;
+    font-size: clamp(2rem, 4.2vw, 3.2rem);
+    letter-spacing: 0.2px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: .5em;
+
+}
+
+.subtitle {
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 24px;
+}
+
+@media (max-width: 960px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Columna izquierda */
+.quickBox {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ctaPrimary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 18px;
+    background: var(--color-primary);
+    color: #fff;
+    text-decoration: none;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    font-weight: 600;
+    transition: background .2s ease;
+}
+
+.ctaPrimary:hover {
+    background: var(--color-primary-hover);
+    color: #fff;
 }
 
 .card {
-    background: #fff;
+    background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
-    padding: 1.2rem;
+    box-shadow: var(--shadow-sm);
+    padding: 16px;
+}
+
+.cardTitle {
+    font-size: 18px;
+    margin: 0 0 8px 0;
+}
+
+.cardText {
+    margin: 0 0 10px 0;
+    color: var(--color-text-muted);
+}
+
+.linkStrong {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: 600;
+}
+
+.embedMap {
+    height: 220px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+}
+
+.embedMap iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Columna derecha (form) */
+.formBox {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    padding: 18px;
+    align-self: start;
+}
+
+/* === Formulario === */
+.form {
+    display: grid;
+    gap: 12px;
+}
+
+.field {
+    display: grid;
+    gap: 6px;
+}
+
+.field label {
+    font-weight: 600;
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: calc(var(--radius) - 4px);
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+    outline: none;
+}
+
+/* Foco */
+.field input:focus,
+.field textarea:focus {
+    border-color: var(--color-primary);
+}
+
+
+
+/* Estado inválido (CSS Modules exige clase local en el selector) */
+.control[aria-invalid="true"] {
+    border-color: #b00020 !important;
+}
+
+/* Errores por campo */
+.fieldError {
+    font-size: 12px;
+    color: #b00020;
+}
+
+/* Mensajes generales (éxito / error) */
+.alertSuccess,
+.alertError {
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    border: 1px solid var(--color-border);
     box-shadow: var(--shadow-sm);
 }
 
-.line {
-    margin: 0 0 .4rem;
+.alertSuccess {
+    background: var(--color-primary-soft);
     color: var(--color-text);
 }
 
-.mapLink {
-    color: var(--color-primary);
-    text-decoration: underline;
+.alertError {
+    background: #fff0f0;
+    color: #7a1f1f;
+    border-color: rgba(122, 31, 31, 0.25);
 }
 
-.mapLink:hover {
-    color: var(--color-primary-hover);
-}
-
-/* CTAs */
-.ctas {
+/* Acciones */
+.actions {
     display: flex;
-    gap: .75rem;
     flex-wrap: wrap;
-    margin-top: .75rem;
+    gap: 10px;
+    align-items: center;
+
 }
 
-.primary,
-.outline {
-    display: inline-block;
-    padding: .7rem 1.2rem;
-    border-radius: 999px;
+.submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: var(--color-primary);
+    color: #fff;
     font-weight: 600;
-    text-decoration: none;
-    transition: transform .15s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
-}
-
-.primary {
-    background: var(--color-primary);
-    color: #fff;
+    border: 0;
+    border-radius: var(--radius);
     box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: background .2s ease;
+    width: 80%;
+    margin: auto;
+    justify-content: center;
 }
 
-.primary:hover {
+.submit:hover {
     background: var(--color-primary-hover);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
 }
 
-.outline {
-    border: 2px solid var(--color-primary);
-    color: var(--color-primary);
-    background: transparent;
+.submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
-.outline:hover {
+.secondary {
+    padding: 10px 12px;
+    background: var(--color-primary-soft);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+/* Legal */
+.disclaimer {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+/* Honeypot */
+.honey {
+    position: absolute !important;
+    left: -9999px !important;
+    opacity: 0 !important;
+}
+
+/* Spinner minimalista */
+.spinner {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid rgba(63, 61, 86, 0.25);
+    border-top-color: #fff;
+    display: inline-block;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
     background: var(--color-primary);
     color: #fff;
-    transform: translateY(-1px);
+    padding: 12px 14px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .25s ease, transform .25s ease;
+    z-index: 50;
+}
+
+.toastShow {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Contenedor vertical de bloques en la columna izquierda */
+.stack {
+    display: grid;
+    gap: 20px;
+}
+
+/* Bloques visuales consistentes */
+.block {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    padding: 16px;
+}
+
+.blockHeader {
+    margin-bottom: 10px;
+}
+
+/* Texto guía más destacado que body, menos que título */
+.lead {
+    margin: 0;
+    color: var(--color-text);
+}
+
+/* Fila de CTA (permite agregar más botones si hiciera falta) */
+.ctaRow {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 8px;
+}
+
+/* Ajuste responsive: que el mapa no “aplasté” los bloques en mobile */
+@media (max-width: 960px) {
+    .block {
+        padding: 14px;
+    }
 }
