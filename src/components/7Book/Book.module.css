@@ -1,66 +1,210 @@
+
+
+/* ===== Sección / Layout ===== */
 .section {
     background: var(--color-surface-alt);
     padding: clamp(2.5rem, 6vw, 4rem) 0;
-    border-bottom: 1px solid var(--color-border);
 }
 
-.eyebrow {
-    color: #fff;
-    font-weight: 700;
-    letter-spacing: .04em;
-    text-transform: uppercase;
-    margin: 0 0 1rem;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, .15);
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    padding: 1.2rem;
-    box-shadow: var(--shadow-sm);
-    display: grid;
-    gap: 1rem;
-    align-items: start;
-    grid-template-columns: 1fr auto;
+/* ===== Encabezado ===== */
+.header {
+    margin-bottom: clamp(14px, 3vw, 20px);
 }
 
 .title {
-    margin: 0 0 .25rem;
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+    line-height: 1.15;
+    margin: 0 0 6px 0;
     color: var(--color-text);
+    font-weight: 700;
 }
 
-.text {
-    margin: 0 0 .25rem;
-    color: var(--color-text);
-}
-
-.textMuted {
-    margin: 0 0 .5rem;
+.subtitle {
+    margin: 0;
     color: var(--color-text-muted);
+    font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+    font-weight: 500;
+    font-size: medium;
 }
 
-.buy {
-    align-self: start;
-    display: inline-block;
-    padding: .7rem 1.2rem;
-    border-radius: 999px;
-    font-weight: 600;
-    text-decoration: none;
+/* ===== CTA ===== */
+.ctaPrimary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
     background: var(--color-primary);
     color: #fff;
-    box-shadow: var(--shadow-sm);
-    transition: transform .15s ease, box-shadow .2s ease, background-color .2s ease;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background .18s ease, transform .18s ease;
 }
 
-.buy:hover {
+.ctaPrimary:hover {
     background: var(--color-primary-hover);
     transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
+    color: #fff;
 }
 
-@media (max-width: 640px) {
-    .card {
-        grid-template-columns: 1fr;
+.ctaBottom {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ===== Slider ===== */
+.sliderWrap {
+    position: relative;
+    margin-top: 16px;
+    max-width: 960px;
+    /* evita estirar a full width en desktop */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Tarjeta del slide */
+.slide {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.figure {
+    margin: 0;
+}
+
+/* Contenedor de imagen con proporción y límite de altura */
+.imageBox {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    /* proporción vertical agradable en mobile */
+    max-height: 70vh;
+    /* límite general en mobile para no ocupar toda la vista */
+    overflow: hidden;
+}
+
+/* Imagen: SIEMPRE cover (pedido) */
+.image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    /* cover garantizado */
+    object-position: center;
+    background: var(--color-bg);
+}
+
+/* Caption opcional */
+.caption {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    padding: 8px 10px;
+}
+
+/* ===== Swiper (solo bullets; sin botones) ===== */
+.sliderWrap :global(.swiper) {
+    padding-bottom: 32px;
+}
+
+.sliderWrap :global(.swiper-slide) {
+    height: auto;
+}
+
+.sliderWrap :global(.swiper-pagination-bullet) {
+    background: var(--color-primary);
+    opacity: .35;
+}
+
+.sliderWrap :global(.swiper-pagination-bullet-active) {
+    opacity: 1;
+}
+
+/* ===== Tablet ===== */
+@media (min-width: 768px) {
+    .sliderWrap {
+        max-width: 1040px;
+    }
+
+    .sliderWrap :global(.swiper) {
+        padding-bottom: 36px;
+    }
+}
+
+/* ===== Desktop (≥1024px): 60% de alto de la vista como MÁXIMO) ===== */
+@media (min-width: 1024px) {
+    .sliderWrap {
+        max-width: 1100px;
+    }
+
+    .imageBox {
+        aspect-ratio: 16 / 9;
+        /* apaisado elegante en desktop */
+        max-height: 60vh;
+        /* pedido: no exceder 60% de la vista */
+    }
+
+    .sliderWrap :global(.swiper) {
+        padding-bottom: 40px;
+    }
+}
+
+/* ===== Desktop grande ===== */
+@media (min-width: 1280px) {
+    .wrapper {
+        max-width: 1280px;
+    }
+
+    .sliderWrap {
+        max-width: 70%;
+    }
+
+
+
+    /* mantiene max-height: 60vh (no se toca); cover ya se respeta por .image */
+}
+
+
+
+
+/* Contenedor de imagen */
+.imageBox {
+    position: relative;
+    width: 100%;
+
+    /* Tamaño por defecto (mobile-first) */
+    aspect-ratio: var(--book-image-ratio-mobile);
+    max-height: var(--book-image-maxh-mobile);
+
+    overflow: hidden;
+}
+
+/* Imagen: SIEMPRE cover */
+.image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    /* <- cover solicitado */
+    object-position: center;
+    background: var(--color-bg);
+}
+
+/* Desktop: un poco más alto y con otra proporción */
+@media (min-width: 1024px) {
+    .imageBox {
+        aspect-ratio: var(--book-image-ratio-desktop);
+        max-height: var(--book-image-maxh-desktop);
     }
 }

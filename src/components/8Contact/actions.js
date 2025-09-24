@@ -1,6 +1,6 @@
 "use server";
 
-const RTDB_BASE = "https://esme-2719d-default-rtdb.firebaseio.com";
+const RTDB_BASE = process.env.NEXT_PUBLIC_RTDB_BASE;
 
 export async function sendContact(prevState, formData) {
 	const name = (formData.get("name") || "").trim();
