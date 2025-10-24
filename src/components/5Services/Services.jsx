@@ -12,7 +12,7 @@ const ReactPlayer = dynamic(() => import("react-player/youtube"), { ssr: false }
 const v = {
     t: "Título",
     d: "Intro de lo que ofrecemos",
-    url: "",
+    url: "https://www.youtube.com/watch?v=GnsQDsBvJtQ",
 };
 
 export default function Services() {
@@ -48,7 +48,6 @@ export default function Services() {
                                     </button>
                                 }
                             />
-                            <p className="m-5 p-5 w-100 m-auto"> VIDEO</p>
                         </div>
 
                         <div className={styles.text}>
