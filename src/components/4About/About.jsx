@@ -66,7 +66,7 @@ export default function About() {
                         </p>
 
                         <p className={styles.copy}>
-                            La base de mi formación es el <strong>Psicoanálisis</strong>. Amo la idea de
+                            La base de mi formación es la <strong>Psicología integral</strong>. Amo la idea de
                             que no somos “individuos”, sino “sujetos” barrados, divididos entre una parte{" "}
                             <em>consciente</em> y otra <em>inconsciente</em>. La mayor parte del tiempo
                             es nuestro inconsciente el que nos guía, por eso es tan importante descubrir
@@ -84,11 +84,11 @@ export default function About() {
                         <p className={styles.copy}>
                             También coordino <strong>talleres de autoconocimiento</strong>, donde
                             comparto estas herramientas para quienes buscan explorar y comprenderse más
-                            profundamente.
+                            a un nivel más profundo.
                         </p>
 
                         <p className={styles.copy}>
-                            Creo profundamente que <q>comprendernos, alivia</q>. El sentido de este
+                            Creo con convicción que <q>comprendernos, alivia</q>. El sentido de este
                             espacio es brindarte recursos para que aprendas a{" "}
                             <strong>comprenderte</strong> y eso te traiga <strong>alivio</strong>.
                             ¿Te animás?

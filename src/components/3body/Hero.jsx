@@ -15,7 +15,7 @@ export default function Hero() {
 
                 <div className={`${styles.badges1}`}>
 
-                    <p className={` badge-soft me-2 ${styles.badges}`}>Psicoanálisis</p>
+                    <p className={` badge-soft me-2 ${styles.badges}`}>Psicología integral</p>
                     <p className={`badge-soft me-2 ${styles.badges}`}>Biodescodificación</p>
                     <p className={`badge-soft me-2 ${styles.badges}`}>Constelaciones</p>
                     <p className={` badge-soft me-2 ${styles.badges}`}>Registros</p>

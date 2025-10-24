@@ -45,7 +45,7 @@ export default function Footer() {
                     <div className={styles.brandBlock}>
                         <div className={styles.brand}>Esmeralda Perisset</div>
                         <p className={styles.copy}>
-                            Psicóloga clínica — Psicoanálisis, Biodescodificación, Constelaciones familiares,
+                            Psicóloga clínica — Psicología integral, Biodescodificación, Constelaciones familiares,
                             Registros Akáshicos.
                         </p>
                     </div>
