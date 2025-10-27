@@ -38,7 +38,7 @@ openGraph: {
   type: "website",
   images: [
     {
-      url: "http://psicoesmeperisset.com/og-image.webp", // <- url absoluta
+      url: "http://psicoesmeperisset.com/og-image.jpg", // <- url absoluta
       width: 1200,
       height: 630,
       alt: "Esmeralda Perisset | Psicóloga Clínica"
