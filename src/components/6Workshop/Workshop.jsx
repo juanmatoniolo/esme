@@ -1,5 +1,9 @@
+"use client";
+
 import Testimonials from "./Testimonials";
+import Video from "./Video";
 import styles from "./Workshop.module.css";
+// ✅ Importamos el player de YouTube (fork actualizado)
 
 const points = [
     "Lealtades inconscientes y su influencia en nuestra vida.",
@@ -12,7 +16,7 @@ const points = [
 
 export default function Workshop() {
     return (
-        <section cla>
+        <section>
             <section id="taller" className={styles.section} aria-labelledby="workshop-title">
                 <div className="container">
                     <p className={styles.eyebrow}>Taller vivencial de autoconocimiento</p>
@@ -40,6 +44,10 @@ export default function Workshop() {
                         ))}
                     </ul>
                 </div>
+                <div className={styles.videoContainer}>
+                    <Video />
+                </div>
+
             </section>
 
             <div className={styles.oneToOneSection} >

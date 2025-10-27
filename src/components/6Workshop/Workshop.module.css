@@ -36,3 +36,10 @@
     padding-top: 1rem;
     padding-bottom: 2rem;
 }
+
+
+.videoContainer{
+    padding: 2em;
+    width: 100%;
+    margin: auto;
+}

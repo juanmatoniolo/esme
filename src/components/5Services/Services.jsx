@@ -12,7 +12,7 @@ const ReactPlayer = dynamic(() => import("react-player/youtube"), { ssr: false }
 const v = {
     t: "Título",
     d: "Intro de lo que ofrecemos",
-    url: "https://www.youtube.com/watch?v=GnsQDsBvJtQ",
+    url: "https://www.youtube.com/watch?v=Z90h3iFsiFs",
 };
 
 export default function Services() {
