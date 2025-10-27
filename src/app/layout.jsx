@@ -12,7 +12,7 @@ const ubuntu = Ubuntu({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://esme-delta.vercel.app"),
+  metadataBase: new URL("http://psicoesmeperisset.com/"),
   title: "Esmeralda Perisset | Psicóloga Clínica",
   description: "Soy Esmeralda, psicóloga clínica. Descubrí mis talleres y mi libro 'Líneas sinceras'.",
 
@@ -30,16 +30,21 @@ export const metadata = {
 
   manifest: "/manifest.json",
 
-  openGraph: {
-    title: "Esmeralda Perisset | Psicóloga Clínica",
-    description: "Talleres de autoconocimiento y el libro 'Líneas sinceras'.",
-    url: "/",
-    siteName: "Esmeralda Perisset",
-    type: "website",
-    images: [
-      { url: "/og-image.webp", width: 1200, height: 630, alt: "Esmeralda Perisset | Psicóloga Clínica" }
-    ]
-  },
+openGraph: {
+  title: "Esmeralda Perisset | Psicóloga Clínica",
+  description: "Talleres de autoconocimiento y el libro 'Líneas sinceras'.",
+  url: "http://psicoesmeperisset.com/", // <- aquí ponelo completo
+  siteName: "Esmeralda Perisset",
+  type: "website",
+  images: [
+    {
+      url: "http://psicoesmeperisset.com/og-image.webp", // <- url absoluta
+      width: 1200,
+      height: 630,
+      alt: "Esmeralda Perisset | Psicóloga Clínica"
+    }
+  ]
+},
 
   twitter: {
     card: "summary_large_image",
