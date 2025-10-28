@@ -41,7 +41,7 @@ export default function Book({
     );
 
     return (
-        <section className={` ${styles.section}`} aria-labelledby="book-title">
+        <section className={` ${styles.section}`} aria-labelledby="book-title" id="libro">
             <div className={`${styles.wrapper} container`}>
                 <div className={`${styles.header} container`}>
                     <h2 id="book-title" className={styles.title}>{BOOK_TITLE}</h2>

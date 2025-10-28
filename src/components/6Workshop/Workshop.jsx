@@ -63,7 +63,7 @@ export default function Workshop() {
                     Realizo mis sesiones 1 a 1 de manera <strong>presencial</strong> y también <strong>online a cualquier parte del mundo</strong>.
                 </p>
                 <p>
-                    Combino mis conocimientos en <strong>psicoanálisis</strong> con mi búsqueda de herramientas como{" "}
+                    Combino mis conocimientos en <strong>psicología </strong> con mi búsqueda de herramientas como{" "}
                     <strong>Constelaciones</strong> y <strong>Bio descodificación</strong>, que utilizo en el espacio terapéutico
                     siempre que el paciente lo requiera.
                 </p>
