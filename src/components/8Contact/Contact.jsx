@@ -10,7 +10,8 @@ function buildWhatsappHref() {
 }
 
 export default function Contact() {
-	const mapAddress = "Eva Perón 500, Carcarañá, Santa Fe, Argentina";
+	const mapAddress = "Eva Perón 739, Carcarañá, Santa Fe, Argentina";
+
 	const mapQuery = encodeURIComponent(mapAddress);
 	const whatsappHref = buildWhatsappHref();
 

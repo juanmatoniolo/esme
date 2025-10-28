@@ -53,10 +53,10 @@ export default function Workshop() {
             <div className={styles.oneToOneSection} >
             </div>
             <section
-                className="container my-5"
+                className="container "
                 aria-labelledby="one-to-one-title"
             >
-                <h2 id="one-to-one-title" className="mb-3">
+                <h2 id="one-to-one-title" className="mb-4 text-center m-auto">
                     Sesiones 1 a 1
                 </h2>
                 <p>
